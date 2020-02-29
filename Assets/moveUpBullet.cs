@@ -6,7 +6,7 @@ public class moveUpBullet : MonoBehaviour
 {
     private Rigidbody2D bullet;
     private Vector2 upwardsMomentum = new Vector2(0f, 1f);
-    public int speed;
+    public float speed;
     // Start is called before the first frame update
     void Start()
     {
@@ -16,6 +16,6 @@ public class moveUpBullet : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bullet.AddForce(upwardsMomentum * speed);
+        bullet.velocity = upwardsMomentum * speed* Time.deltaTime;
     }
 }
