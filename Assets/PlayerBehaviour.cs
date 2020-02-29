@@ -5,7 +5,7 @@ using UnityEngine;
 public class PlayerBehaviour : MonoBehaviour
 {
     public Rigidbody2D player;
-    public int gForce;
+    public int directionalMomentum;
     private Vector2 gravity = new Vector2(0f, -1f);
     public LayerMask bulletsLayer;
     public Transform parryPoint;
@@ -15,7 +15,7 @@ public class PlayerBehaviour : MonoBehaviour
     public bool swingin = false ;
     public float dir;
     public float speed = 1f;
-    private Vector2 horMovement = new Vector2(1f, 0f);
+    private Vector2 horizontalMovement = new Vector2(1f, 0f);
 
     void Start()
     {
@@ -25,8 +25,8 @@ public class PlayerBehaviour : MonoBehaviour
     void Update()
     {
        dir = Input.GetAxisRaw("Horizontal");
-       player.AddForce(gravity * gForce * Time.deltaTime);
-       player.velocity = horMovement *dir * speed * Time.deltaTime;
+        player.AddForce(gravity * directionalMomentum * Time.deltaTime);
+       player.velocity = horizontalMovement *dir * speed*  Time.deltaTime;
         if (Input.GetKeyDown("x"))
         {
             SwingAnimation();
@@ -49,12 +49,20 @@ public class PlayerBehaviour : MonoBehaviour
             bullet = Physics2D.OverlapCircle(parryPoint.position, pPointSize, bulletsLayer);
             if (bullet != null)
              {
-                Debug.Log(bullet);
+                Debug.Log("hit");
+                if(directionalMomentum > 0)
+                {
+                    directionalMomentum = -5 * directionalMomentum;
+                }
              }
         }
         }
     void NotSwingin()
     {
         swingin = false;
+        if (directionalMomentum < 0)
+        {
+            directionalMomentum = directionalMomentum/ -5;
+        }
     }
 }
