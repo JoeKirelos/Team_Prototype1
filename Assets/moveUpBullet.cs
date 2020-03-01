@@ -17,5 +17,6 @@ public class moveUpBullet : MonoBehaviour
     void Update()
     {
         bullet.velocity = upwardsMomentum * speed* Time.deltaTime;
+
     }
 }

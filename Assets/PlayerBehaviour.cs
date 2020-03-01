@@ -18,8 +18,16 @@ public class PlayerBehaviour : MonoBehaviour
     private Vector2 horizontalMovement = new Vector2(1f, 0f);
     public int horBounce;
 
+    // sound
+    public AudioClip swiping;
+    public AudioClip popping;
+
     void Start()
     {
+        GetComponent<AudioSource>().playOnAwake = false;
+        GetComponent<AudioSource>().clip = swiping;
+        GetComponent<AudioSource>().clip = popping;
+
     }
 
     // Update is called once per frame
@@ -32,6 +40,7 @@ public class PlayerBehaviour : MonoBehaviour
         {
             SwingAnimation();
             swingin = true;
+            GetComponent<AudioSource>().PlayOneShot(swiping);
         }
     }
     void SwingAnimation()
@@ -56,6 +65,7 @@ public class PlayerBehaviour : MonoBehaviour
                     directionalMomentum = -5 * directionalMomentum;
                     int bDir = Random.Range(-2, 2);
                     player.AddForce(horizontalMovement * bDir * horBounce * Time.deltaTime);
+                    GetComponent<AudioSource>().PlayOneShot(popping);
                 }
              }
         }
