@@ -59,13 +59,13 @@ public class PlayerBehaviour : MonoBehaviour
             bullet = Physics2D.OverlapCircle(parryPoint.position, pPointSize, bulletsLayer);
             if (bullet != null)
              {
-                Debug.Log("hit");
                 if(directionalMomentum > 0)
                 {
                     directionalMomentum = -5 * directionalMomentum;
                     int bDir = Random.Range(-2, 2);
                     player.AddForce(horizontalMovement * bDir * horBounce * Time.deltaTime);
                     GetComponent<AudioSource>().PlayOneShot(popping);
+                    Destroy(bullet);
                 }
              }
         }
