@@ -16,6 +16,7 @@ public class PlayerBehaviour : MonoBehaviour
     public float dir;
     public float speed = 1f;
     private Vector2 horizontalMovement = new Vector2(1f, 0f);
+    public int horBounce;
 
     void Start()
     {
@@ -53,6 +54,8 @@ public class PlayerBehaviour : MonoBehaviour
                 if(directionalMomentum > 0)
                 {
                     directionalMomentum = -5 * directionalMomentum;
+                    int bDir = Random.Range(-2, 2);
+                    player.AddForce(horizontalMovement * bDir * horBounce * Time.deltaTime);
                 }
              }
         }
