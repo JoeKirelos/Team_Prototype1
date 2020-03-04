@@ -283,8 +283,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1110491947
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0f664730a3c025945af753dc39cd7d4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -310,7 +310,7 @@ Transform:
   m_Children:
   - {fileID: 1957366004}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -58.260002}
 --- !u!82 &459926345
 AudioSource:
@@ -882,7 +882,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   player: {fileID: 871830715}
-  directionalMomentum: 10000
+  directionalMomentum: 12000
   bulletsLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -1151,7 +1151,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1027681335
 PrefabInstance:
@@ -1573,8 +1573,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1110491947
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 0f664730a3c025945af753dc39cd7d4f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1600,7 +1600,7 @@ Transform:
   m_Children:
   - {fileID: 503406887}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 56.573}
 --- !u!82 &2001008196
 AudioSource:
@@ -1999,7 +1999,7 @@ PrefabInstance:
     - target: {fileID: 2699366484779089938, guid: b80492d4680083b43af2493d0e87b77d,
         type: 3}
       propertyPath: m_RootOrder
-      value: 3
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 2699366484779089938, guid: b80492d4680083b43af2493d0e87b77d,
         type: 3}
@@ -2015,6 +2015,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3429912274020301057, guid: b80492d4680083b43af2493d0e87b77d,
+        type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4912876510826637721, guid: b80492d4680083b43af2493d0e87b77d,
         type: 3}
